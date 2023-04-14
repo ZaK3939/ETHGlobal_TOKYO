@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
-import styled from "styled-components";
-import { useContractRead } from "wagmi";
+import React, { useState, useEffect } from "react"
+import { ethers } from "ethers"
+import styled from "styled-components"
+import { useContractRead } from "wagmi"
 import {
   AttestationStationAddress,
-  HackathonAttestationAddress,
-} from "../../constants/addresses";
-import AttestationStationABI from "../../constants/abi.json";
-import { H2, Body16, Body16Bold } from "../OPStyledTypography";
-import { AttestForm, FormRow, FormLabel } from "../StyledFormComponents";
-import { TextInput } from "../OPStyledTextInput";
-import Tooltip from "../Tooltip";
+  HackathonAttestationAddress
+} from "../../constants/addresses"
+import AttestationStationABI from "../../constants/abi.json"
+import { H2, Body16, Body16Bold } from "../OPStyledTypography"
+import { AttestForm, FormRow, FormLabel } from "../StyledFormComponents"
+import { TextInput } from "../OPStyledTextInput"
+import Tooltip from "../Tooltip"
 
 const Textarea = styled.textarea`
   align-items: center;
@@ -23,39 +23,39 @@ const Textarea = styled.textarea`
   padding: 9px 12px;
   width: 456px;
   resize: none;
-`;
+`
 const SubSection = styled(Body16Bold)`
   margin: 0;
-`;
+`
 
 const ReadAttestation = () => {
-  const [creator, setCreator] = useState(HackathonAttestationAddress);
-  const [about, setAbout] = useState("");
-  const [key, setKey] = useState("");
-  const [bytes32Key, setBytes32Key] = useState("");
+  const [creator, setCreator] = useState(HackathonAttestationAddress)
+  const [about, setAbout] = useState("")
+  const [key, setKey] = useState("")
+  const [bytes32Key, setBytes32Key] = useState("")
 
-  const [isCreatorValid, setIsCreatorValid] = useState(false);
-  const [isAboutValid, setIsAboutValid] = useState(false);
-  const [isKeyValid, setIsKeyValid] = useState(false);
+  const [isCreatorValid, setIsCreatorValid] = useState(false)
+  const [isAboutValid, setIsAboutValid] = useState(false)
+  const [isKeyValid, setIsKeyValid] = useState(false)
 
   const { data, error, isError } = useContractRead({
     address: AttestationStationAddress,
     abi: AttestationStationABI,
     functionName: "attestations",
     args: [creator, about, bytes32Key],
-    enabled: Boolean(creator) && Boolean(about) && Boolean(bytes32Key),
-  });
+    enabled: Boolean(creator) && Boolean(about) && Boolean(bytes32Key)
+  })
 
   useEffect(() => {
-    setIsCreatorValid(ethers.utils.isAddress(creator));
-    setIsAboutValid(ethers.utils.isAddress(about));
-    setIsKeyValid(key !== "");
+    setIsCreatorValid(ethers.utils.isAddress(creator))
+    setIsAboutValid(ethers.utils.isAddress(about))
+    setIsKeyValid(key !== "")
     if (isError) {
-      console.error(error);
-      console.error(error.value);
-      console.error(error.code);
+      console.error(error)
+      console.error(error.value)
+      console.error(error.code)
     }
-  }, [creator, about, key, isError, error]);
+  }, [creator, about, key, isError, error])
 
   return (
     <>
@@ -116,20 +116,21 @@ const ReadAttestation = () => {
             type="text"
             placeholder="Project ID (Ex. Phil's Project)"
             onChange={(e) => {
-              const key = e.target.value;
+              const key = e.target.value
               if (key.length > 31) {
-                setKey(key);
-                setBytes32Key(key);
+                setKey(key)
+                setBytes32Key(key)
               } else {
-                setKey(key);
-                setBytes32Key(ethers.utils.formatBytes32String(key));
+                setKey(key)
+                setBytes32Key(ethers.utils.formatBytes32String(key))
               }
             }}
             value={key}
             valid={isKeyValid}
           />
         </FormRow>
-        {data ? (
+        {data
+          ? (
           <>
             <SubSection>
               You can check atttestation how much donation to project
@@ -156,15 +157,16 @@ const ReadAttestation = () => {
               />
             </FormRow>
           </>
-        ) : (
+            )
+          : (
           <></>
-        )}
+            )}
         {isError && (
             <FormLabel>Error: {error?.message}</FormLabel>
         )}
       </AttestForm>
     </>
-  );
-};
+  )
+}
 
-export default ReadAttestation;
+export default ReadAttestation

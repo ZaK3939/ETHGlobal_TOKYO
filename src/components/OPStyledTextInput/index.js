@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const TextInput = styled.input`
   box-sizing: border-box;
@@ -42,4 +42,4 @@ export const TextInput = styled.input`
     `
     border: 1px solid #DD6B20;
   `}
-`;
+`

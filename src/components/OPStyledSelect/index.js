@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Select = styled.select`
   box-sizing: border-box;
@@ -40,4 +40,4 @@ export const Select = styled.select`
     `
     border: 1px solid #DD6B20;
   `}
-`;
+`

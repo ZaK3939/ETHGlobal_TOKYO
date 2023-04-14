@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const PrimaryButton = styled.button`
   display: flex;
@@ -37,6 +37,6 @@ export const PrimaryButton = styled.button`
     color: #68778d;
     cursor: not-allowed;
   }
-`;
+`
 
 // todo: pressed, focused

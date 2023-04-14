@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React from "react"
 
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 const Nav = styled.nav`
   background: #ffffff;
@@ -13,14 +13,14 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
+`
 
 const Left = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px 0px 0px 32px;
-`;
+`
 
 const Right = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const Right = styled.div`
   align-items: center;
   padding: 0px 32px 0px 0px;
   gap: 32px;
-`;
+`
 
 const Title = styled.h1`
   font-family: Rubik;
@@ -37,11 +37,11 @@ const Title = styled.h1`
   font-weight: 700;
   color: rgb(255, 4, 32);
   letter-spacing: 0.1rem;
-`;
+`
 const TitleAccent = styled.span`
   color: black;
   font-weight: 400;
-`;
+`
 
 const Link = styled.a`
   cursor: pointer;
@@ -59,7 +59,7 @@ const Link = styled.a`
     border-bottom: 3px solid #FF0420;
     border-radius: 100px 100px 0px 0px;
   `}
-`;
+`
 
 const Header = (props) => {
   return (
@@ -108,7 +108,7 @@ const Header = (props) => {
         />
       </Right>
     </Nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

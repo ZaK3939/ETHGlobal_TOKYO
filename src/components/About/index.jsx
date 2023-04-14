@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { H2, Body16, Body16Bold } from "../OPStyledTypography";
+import { H2, Body16, Body16Bold } from "../OPStyledTypography"
 
 const AboutContainer = styled.div`
   display: flex;
@@ -10,22 +10,22 @@ const AboutContainer = styled.div`
   box-sizing: border-box;
   text-align: left;
   width: 672px;
-`;
+`
 
 const SubSection = styled(Body16Bold)`
   margin: 0;
-`;
+`
 
 const SubsubSection = styled.div`
   margin: 0;
-`;
+`
 
 const Link = styled.a`
   color: #f01a37;
-`;
+`
 const Bold = styled.span`
   font-weight: bold;
-`;
+`
 // Good products are often born at hackathons, but few continue to be developed thereafter.
 // Therefore, we propose a system for ETHglobal participants where each individual sets their own milestones after submission, continues development, and receives further grants and donations from sponsors and hackathon viewers upon achieving them.
 // This creates clear goals and incentives, and is expected to promote continuous development.
@@ -44,7 +44,7 @@ const AboutHackathonAttestations = () => {
       <SubSection>What&apos;s the Motivation?</SubSection>
       <Body16>
         {" "}
-        <Bold>It's very tough! 😢 Challenges in Hackathon-based project. </Bold>
+        <Bold>Its very tough! 😢 Challenges in Hackathon-based project. </Bold>
         <SubsubSection>1. Struggle with insufficient funds. </SubsubSection>
         <SubsubSection>
           2. Face difficulties in monitoring and evaluating the progress of
@@ -85,7 +85,7 @@ const AboutHackathonAttestations = () => {
           rel="noopener noreferrer"
           href="https://github.com/ZaK3939/ETHGlobal_TOKYO"
         >
-         Hackathon Github repository
+          Hackathon Github repository
         </Link>
         <div />
         <Link
@@ -97,7 +97,7 @@ const AboutHackathonAttestations = () => {
         </Link>
       </Body16>
     </AboutContainer>
-  );
-};
+  )
+}
 
-export default AboutHackathonAttestations;
+export default AboutHackathonAttestations

@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import styled from "styled-components";
-import tooltip from "../../assets/svg/tooltip.svg";
+import React, { useState } from "react"
+import styled from "styled-components"
+import tooltip from "../../assets/svg/tooltip.svg"
 
 const TooltipIcon = styled.img`
   cursor: pointer;
   height: 12px;
-`;
+`
 
 const TooltipBox = styled.div`
   text-align: left;
@@ -18,7 +18,7 @@ const TooltipBox = styled.div`
   border-radius: 6px;
   position: absolute;
   z-index: 1;
-`;
+`
 
 const TooltipContainer = styled.span`
   & ${TooltipIcon}:hover + ${TooltipBox} {
@@ -29,10 +29,10 @@ const TooltipContainer = styled.span`
     padding: 8px 8px;
     border-radius: 4px;
   }
-`;
+`
 
 const Tooltip = (props) => {
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(false)
 
   return (
     <TooltipContainer
@@ -46,7 +46,7 @@ const Tooltip = (props) => {
       />
       <TooltipBox>{props.children}</TooltipBox>
     </TooltipContainer>
-  );
-};
+  )
+}
 
-export default Tooltip;
+export default Tooltip
