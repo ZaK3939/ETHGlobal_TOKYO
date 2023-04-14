@@ -1,0 +1,16 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.5",
+    "hardhat": "^2.13.0",
+    "install": "^0.13.0",
+    "npm": "^9.6.4"
+  },
+  "dependencies": {
+    "@eth-optimism/contracts-bedrock": "^0.13.2",
+    "@openzeppelin/contracts": "^4.8.2",
+    "dotenv": "^16.0.3"
+  }
+}

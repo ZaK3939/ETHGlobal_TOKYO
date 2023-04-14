@@ -1,0 +1,50 @@
+{
+  "name": "hackathon-attestation-station-interface",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@marp-team/marp-cli": "^2.4.0",
+    "@pushprotocol/restapi": "^1.2.2",
+    "@rainbow-me/rainbowkit": "^0.7.4",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "ethers": "^5.7.2",
+    "i": "^0.3.7",
+    "npm": "^9.6.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.9",
+    "wagmi": "^0.7.12"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --ext .js,.jsx . --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.36.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "hardhat": "^2.13.0",
+    "prettier": "^2.8.7"
+  }
+}
