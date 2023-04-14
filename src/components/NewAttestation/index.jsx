@@ -158,11 +158,14 @@ const NewAttestation = () => {
 
   useEffect(() => {
     try {
-      if (chain.name === "Optimism") {
-        setEtherscanBaseLink("https://optimistic.etherscan.io/tx/");
-      }
-      if (chain.name === "Optimism Goerli") {
-        setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
+      // if (chain.name === "Optimism") {
+      //   setEtherscanBaseLink("https://optimistic.etherscan.io/tx/");
+      // }
+      // if (chain.name === "Optimism Goerli") {
+      //   setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
+      // }
+      if (chain.name === "Gnosis") {
+        setEtherscanBaseLink("https://gnosisscan.io//tx/");
       }
     } catch (e) {
       console.error(e);
@@ -507,7 +510,7 @@ const NewAttestation = () => {
               </FormLabel>
               <TextInput
                 type="text"
-                placeholder="Ex. 1 (:=1 ETH)"
+                placeholder="Ex. 1 (:=1 DAI)"
                 onChange={(e) => setVal2(e.target.value)}
                 value={val2}
                 valid={isValValid2}

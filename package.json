@@ -1,6 +1,7 @@
 {
   "name": "hackathon-attestation-station-interface",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@marp-team/marp-cli": "^2.4.0",

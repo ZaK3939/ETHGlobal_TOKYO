@@ -39,7 +39,7 @@ const GnosisChain = {
 
 const { chains, provider, webSocketProvider } = configureChains(
   // [chain.optimism, chain.optimismGoerli],
-  [GnosisChain,chain.optimism],
+  [GnosisChain],
   [
     jsonRpcProvider({ rpc: () => ({ http: "https://rpc.ankr.com/gnosis" }) }),  //<<<< New RPC Provider
     publicProvider(),

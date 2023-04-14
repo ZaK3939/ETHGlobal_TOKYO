@@ -184,12 +184,12 @@ const WithdrawDonation = () => {
 
   useEffect(() => {
     try {
-      if (chain.name === "Optimism") {
-        setEtherscanBaseLink("https://optimistic.etherscan.io/tx/");
-      }
-      if (chain.name === "Optimism Goerli") {
-        setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
-      }
+      // if (chain.name === "Optimism") {
+      //   setEtherscanBaseLink("https://optimistic.etherscan.io/tx/");
+      // }
+      // if (chain.name === "Optimism Goerli") {
+      //   setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
+      // }
       if (chain.name === "Gnosis") {
         setEtherscanBaseLink("https://gnosisscan.io//tx/");
       }

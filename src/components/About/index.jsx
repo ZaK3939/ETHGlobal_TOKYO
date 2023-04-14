@@ -83,9 +83,9 @@ const AboutHackathonAttestations = () => {
         <Link
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/sbvegan/attestation-station-interface"
+          href="https://github.com/ZaK3939/ETHGlobal_TOKYO"
         >
-          Github repository
+         Hackathon Github repository
         </Link>
         <div />
         <Link
