@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import NewAttestation from "../NewAttestation"
-import ReadAttestation from "../ReadAttesatation"
-import CreateProject from "../CreateProject"
-import WithdrawDonation from "../WithdrawDonation"
-import About from "../About"
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import NewAttestation from "../NewAttestation";
+import ReadAttestation from "../ReadAttesatation";
+import CreateProject from "../CreateProject";
+import WithdrawDonation from "../WithdrawDonation";
+import About from "../About";
 
 const Page = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 60px;
-`
+`;
 
 const Section = styled.div`
   display: flex;
@@ -23,39 +23,39 @@ const Section = styled.div`
   box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12),
     0px 4px 16px -1px rgba(20, 23, 26, 0.08);
   border-radius: 16px;
-`
+`;
 
 const Content = (props) => {
-  const [content, setContent] = useState(<NewAttestation />)
+  const [content, setContent] = useState(<About />);
 
   useEffect(() => {
     switch (props.activeContent) {
       case 0:
-        setContent(<NewAttestation />)
-        break
+        setContent(<NewAttestation />);
+        break;
       case 1:
-        setContent(<ReadAttestation />)
-        break
+        setContent(<ReadAttestation />);
+        break;
       case 2:
-        setContent(<About />)
-        break
+        setContent(<About />);
+        break;
       case 3:
-        setContent(<CreateProject />)
-        break
+        setContent(<CreateProject />);
+        break;
       case 4:
-        setContent(<WithdrawDonation />)
-        break
+        setContent(<WithdrawDonation />);
+        break;
       default:
-        setContent(<div>How&apos;d you get here???</div>)
-        break
+        setContent(<div>How&apos;d you get here???</div>);
+        break;
     }
-  }, [props.activeContent])
+  }, [props.activeContent]);
 
   return (
     <Page>
       <Section>{content}</Section>
     </Page>
-  )
-}
+  );
+};
 
-export default Content
+export default Content;

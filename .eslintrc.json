@@ -13,7 +13,11 @@
   "plugins": ["react"],
   "rules": {
     "quotes": ["error", "double"],
+    "semi": "off",
+    "comma-dangle": "off",
     "no-unused-vars": "off",
+    "no-undef": "off",
+    "multiline-ternary": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   },
