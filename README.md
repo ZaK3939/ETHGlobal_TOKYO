@@ -1,10 +1,10 @@
-# HackathonAttestation Station Interface
+# HackathonAttestation Interface
 
 - Empowering Sustainable Development with Attestation-based Donations
 
 Our hackathon proposal involves creating a product that allows post-hackathon projects to receive donations from potential future users, based on attestations from sponsors.
 
-[![hackahon-overview](./hackahon-overview.png)](https://youtu.be/rBesMSd0GzM)
+![hackahon-overview](./hackahon-overview.png)
 
 This product utilizes smart contracts and an efficient interface while effectively leveraging oSnap, attestations, and gnosis-safe features to ensure secure funds management and support reception.
 
@@ -74,7 +74,7 @@ This creates a win-win situation for everyone involved in the project’s develo
 
 ## Detaild Flow
 
-[![flow-of-system](./flow-of-system.png)](https://youtu.be/rBesMSd0GzM)
+![flow-of-system](./flow-of-system.png)
 
 ---
 

@@ -191,8 +191,8 @@ const WithdrawDonation = () => {
       // if (chain.name === "Optimism Goerli") {
       //   setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
       // }
-      if (chain.name === "Gnosis") {
-        setEtherscanBaseLink("https://gnosisscan.io//tx/");
+      if (chain.name === "Gnosis Chain") {
+        setEtherscanBaseLink("https://gnosisscan.io/tx/");
       }
     } catch (e) {
       console.error(e);
@@ -206,7 +206,7 @@ const WithdrawDonation = () => {
       <Link
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/sbvegan/attestation-station-interface"
+        href="https://snapshot.org/#/zak3939.eth/proposal/0xe9e1e35f5a45fc35e16fac8618d909ccf739ae7f910972047ca0db2c3043464e"
       >
         Snapshot
       </Link>
@@ -262,6 +262,9 @@ const WithdrawDonation = () => {
           <>
             {votingStatusResult === 1 ? (
               <>
+                <SubSection>
+                  Congrats. you Got Donation from potential user😄
+                </SubSection>
                 <FormRow>
                   <FormLabel>
                     alldonationAmount&nbsp;
@@ -274,7 +277,7 @@ const WithdrawDonation = () => {
                       </ul>
                     </Tooltip>
                   </FormLabel>
-                  <Textarea readOnly value={alldonationAmountResult} />
+                  <Textarea readOnly value={alldonationAmount} />
                 </FormRow>
                 <FormButton>
                   <PrimaryButton disabled={!write || isLoading}>

@@ -164,8 +164,8 @@ const NewAttestation = () => {
       // if (chain.name === "Optimism Goerli") {
       //   setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
       // }
-      if (chain.name === "Gnosis") {
-        setEtherscanBaseLink("https://gnosisscan.io//tx/");
+      if (chain.name === "Gnosis Chain") {
+        setEtherscanBaseLink("https://gnosisscan.io/tx/");
       }
     } catch (e) {
       console.error(e);
@@ -204,7 +204,7 @@ const NewAttestation = () => {
       let attest2;
       let donationAmount;
       if (key2.length > 31) {
-        donationAmount = val2 === "" ? "0" : val2;
+        donationAmount = ethers.utils.parseEther(val2 === "" ? "0" : val2);
         attest2 = {
           about: about2,
           key: hashedKey2,
@@ -214,7 +214,7 @@ const NewAttestation = () => {
           ),
         };
       } else {
-        donationAmount = val2 === "" ? "0" : val2;
+        donationAmount = ethers.utils.parseEther(val2 === "" ? "0" : val2);
         attest2 = {
           about: about2,
           key: ethers.utils.formatBytes32String(key2 === "" ? "0x" : key2),
@@ -504,7 +504,7 @@ const NewAttestation = () => {
                 Donation value&nbsp;
                 <Tooltip>
                   <ul>
-                    <li>Please enter the desired donation amount in ETH.</li>
+                    <li>Please enter the desired donation amount in DAI.</li>
                   </ul>
                 </Tooltip>
               </FormLabel>

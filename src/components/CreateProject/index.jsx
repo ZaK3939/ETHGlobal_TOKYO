@@ -1,35 +1,35 @@
-import { useEffect, useState } from "react"
-import { ethers } from "ethers"
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
 import {
   usePrepareContractWrite,
   useContractWrite,
   useWaitForTransaction,
-  useNetwork
-} from "wagmi"
-import { HackathonAttestationAddress } from "../../constants/addresses"
-import HackathonAttestationABI from "../../constants/HackathonAttestation.json"
-import styled from "styled-components"
-import { H2, Body16, Body16Bold } from "../OPStyledTypography"
-import { TextInput } from "../OPStyledTextInput"
-import { AttestForm, FormRow, FormLabel } from "../StyledFormComponents"
-import { PrimaryButton } from "../OPStyledButton"
-import Tooltip from "../Tooltip"
+  useNetwork,
+} from "wagmi";
+import { HackathonAttestationAddress } from "../../constants/addresses";
+import HackathonAttestationABI from "../../constants/HackathonAttestation.json";
+import styled from "styled-components";
+import { H2, Body16, Body16Bold } from "../OPStyledTypography";
+import { TextInput } from "../OPStyledTextInput";
+import { AttestForm, FormRow, FormLabel } from "../StyledFormComponents";
+import { PrimaryButton } from "../OPStyledButton";
+import Tooltip from "../Tooltip";
 const FormButton = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 28px 0px 0px;
   width: 672px;
-`
+`;
 
 const Label = styled.label`
   font-weight: bold;
   margin-bottom: 4px;
-`
+`;
 
 const SubSection = styled(Body16Bold)`
   margin: 0;
-`
+`;
 
 const Button = styled.button`
   padding: 8px;
@@ -44,29 +44,29 @@ const Button = styled.button`
   &:hover {
     background-color: #374151;
   }
-`
+`;
 
 const Link = styled.a`
   color: #f01a37;
-`
+`;
 
 const FeedbackMessage = styled.span`
   padding: 0px 36px;
-`
+`;
 
 const CreateProject = () => {
-  const [projectId, setprojectId] = useState("")
-  const [hashedKey, setHashedKey] = useState("")
-  const [projectName, setProjectName] = useState("")
-  const [projectURL, setProjectURL] = useState("")
-  const [projectTarget, setProjectTarget] = useState("")
+  const [projectId, setprojectId] = useState("");
+  const [hashedKey, setHashedKey] = useState("");
+  const [projectName, setProjectName] = useState("");
+  const [projectURL, setProjectURL] = useState("");
+  const [projectTarget, setProjectTarget] = useState("");
 
-  const { chain } = useNetwork()
-  const [etherscanBaseLink, setEtherscanBaseLink] = useState("")
+  const { chain } = useNetwork();
+  const [etherscanBaseLink, setEtherscanBaseLink] = useState("");
   const {
     config,
     error: prepareError,
-    isError: isPrepareError
+    isError: isPrepareError,
   } = usePrepareContractWrite({
     address: HackathonAttestationAddress,
     abi: HackathonAttestationABI.abi,
@@ -76,9 +76,9 @@ const CreateProject = () => {
       Boolean(projectId) &&
       Boolean(projectName) &&
       Boolean(projectURL) &&
-      Boolean(projectTarget)
-  })
-  const { data, error, isError, write } = useContractWrite(config)
+      Boolean(projectTarget),
+  });
+  const { data, error, isError, write } = useContractWrite(config);
 
   useEffect(() => {
     try {
@@ -88,17 +88,17 @@ const CreateProject = () => {
       // if (chain.name === "Optimism Goerli") {
       //   setEtherscanBaseLink("https://goerli-optimism.etherscan.io/tx/");
       // }
-      if (chain.name === "Gnosis") {
-        setEtherscanBaseLink("https://gnosisscan.io//tx/")
+      if (chain.name === "Gnosis Chain") {
+        setEtherscanBaseLink("https://gnosisscan.io/tx/");
       }
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
-  }, [chain])
+  }, [chain]);
 
   const { isLoading, isSuccess } = useWaitForTransaction({
-    hash: data?.hash
-  })
+    hash: data?.hash,
+  });
 
   return (
     <>
@@ -111,8 +111,8 @@ const CreateProject = () => {
       <H2>Lets Create Project😀</H2>
       <AttestForm
         onSubmit={(e) => {
-          e.preventDefault()
-          write?.()
+          e.preventDefault();
+          write?.();
         }}
       >
         <FormRow>
@@ -130,18 +130,18 @@ const CreateProject = () => {
           <TextInput
             type="text"
             onChange={(e) => {
-              const projectId = e.target.value
+              const projectId = e.target.value;
               if (projectId.length > 31) {
-                setprojectId(projectId)
-                const bytesLikeKey = ethers.utils.toUtf8Bytes(projectId)
-                const keccak256HashedKey = ethers.utils.keccak256(bytesLikeKey)
-                setHashedKey(keccak256HashedKey)
+                setprojectId(projectId);
+                const bytesLikeKey = ethers.utils.toUtf8Bytes(projectId);
+                const keccak256HashedKey = ethers.utils.keccak256(bytesLikeKey);
+                setHashedKey(keccak256HashedKey);
               } else {
                 const hashedKey = ethers.utils.formatBytes32String(
                   projectId === "" ? "0x" : projectId
-                )
-                setprojectId(projectId)
-                setHashedKey(hashedKey)
+                );
+                setprojectId(projectId);
+                setHashedKey(hashedKey);
               }
             }}
             placeholder="Ex. Phil's Project"
@@ -236,7 +236,7 @@ const CreateProject = () => {
         )}
       </AttestForm>
     </>
-  )
-}
+  );
+};
 
-export default CreateProject
+export default CreateProject;

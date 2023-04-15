@@ -33,9 +33,9 @@ const Content = (props) => {
       case 0:
         setContent(<NewAttestation />);
         break;
-      case 1:
-        setContent(<ReadAttestation />);
-        break;
+      // case 1:
+      //   setContent(<ReadAttestation />);
+      //   break;
       case 2:
         setContent(<About />);
         break;
