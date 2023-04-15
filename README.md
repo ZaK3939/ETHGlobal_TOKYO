@@ -52,7 +52,13 @@ Our product uniquely combines OP Attestation, oSnap, and Gnosis Safe to create a
 
 3. Gnosis Safe: By incorporating Gnosis Safe, our product provides a secure decentralized custody solution for managing collective assets. This platform enables secure funds management, ensuring that donations are safely held until projects meet their milestones.
 
-- push Protocol
+## Build on Gnosis Chain
+
+Gnosis Chain is an innovative blockchain network that offers a number of attractive features, particularly its cost-effective and stable gas pricing. One of the key advantages of Gnosis Chain is the ability to use its safe, or decentralized storage, at a significantly lower cost than other blockchain platforms. This makes it an ideal choice for users looking to minimize their expenses while maintaining the security and privacy of their digital assets.
+
+Additionally, Gnosis Chain's gas pricing is pegged to the US dollar, which provides a high level of stability. Unlike other blockchain networks that may experience volatile gas fees, Gnosis Chain ensures that users can consistently predict and manage their transaction costs. This stability makes the platform more appealing to a wider audience, as it reduces the barriers to entry and simplifies the user experience.
+
+In summary, Gnosis Chain stands out in the blockchain space due to its cost-effective safe usage and stable, dollar-pegged gas pricing. These features make it a compelling choice for individuals and businesses looking to leverage the benefits of decentralized storage without the financial burden or unpredictability associated with other platforms.
 
 ---
 

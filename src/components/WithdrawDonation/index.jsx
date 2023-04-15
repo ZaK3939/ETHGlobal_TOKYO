@@ -131,6 +131,7 @@ const WithdrawDonation = () => {
       ethers.utils.formatEther(alldonationAmountResult)
     ) {
       console.log("update da");
+      console.log(ethers.utils.formatEther(alldonationAmountResult));
       setDonationAmount("");
       setallDonationAmount(ethers.utils.formatEther(alldonationAmountResult));
     }
