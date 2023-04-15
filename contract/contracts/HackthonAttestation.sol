@@ -61,13 +61,15 @@ contract HackathonAttestation is AccessControl {
     function donateWithAttest(AttestationData memory _attestation) public payable {
         require(projects[_attestation.key].projectStatus == ProjectStatus.Eligible, "Project is not Eligible");
         uint256 val = abi.decode(_attestation.val, (uint256));
-        require(msg.value == val, "Donation amount does not match attestation value");
+        // require(msg.value == val, "Donation amount does not match attestation value");
         IAttestationStation.AttestationData[] memory attestations = new IAttestationStation.AttestationData[](1);
         attestations[0] = IAttestationStation.AttestationData(_attestation.about, _attestation.key, _attestation.val);
         attestationStation.attest(attestations);
         
         if (msg.value > 0) {
-            receiver.transfer(msg.value);
+            // receiver.transfer(msg.value);
+            (bool sent, bytes memory data) = receiver.call{value: msg.value}("");
+            require(sent, "Failed to send Ether");
             donations[msg.sender][_attestation.key] = msg.value;
             donationForProject[_attestation.key] += msg.value;
         }

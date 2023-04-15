@@ -44,14 +44,6 @@ declare module "hardhat/types/runtime" {
       name: "IAttestationStation",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IAttestationStation__factory>;
-    getContractFactory(
-      name: "AttestationStation",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AttestationStation__factory>;
-    getContractFactory(
-      name: "IAttestationStation",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IAttestationStation__factory>;
 
     getContractAt(
       name: "Semver",
@@ -88,16 +80,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.HackathonAttestation>;
-    getContractAt(
-      name: "IAttestationStation",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IAttestationStation>;
-    getContractAt(
-      name: "AttestationStation",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.AttestationStation>;
     getContractAt(
       name: "IAttestationStation",
       address: string,

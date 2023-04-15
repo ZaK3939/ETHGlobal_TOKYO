@@ -2,4 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { HackathonAttestation } from "./HackathonAttestation";
-export type { IAttestationStation } from "./IAttestationStation";

@@ -26,7 +26,7 @@ import type {
   PromiseOrValue,
 } from "../../common";
 
-export declare namespace AttestationStation {
+export declare namespace IAttestationStation {
   export type AttestationDataStruct = {
     about: PromiseOrValue<string>;
     key: PromiseOrValue<BytesLike>;
@@ -40,7 +40,7 @@ export declare namespace AttestationStation {
   };
 }
 
-export interface AttestationStationInterface extends utils.Interface {
+export interface IAttestationStationInterface extends utils.Interface {
   functions: {
     "attest((address,bytes32,bytes)[])": FunctionFragment;
     "attestations(address,address,bytes32)": FunctionFragment;
@@ -52,7 +52,7 @@ export interface AttestationStationInterface extends utils.Interface {
 
   encodeFunctionData(
     functionFragment: "attest",
-    values: [AttestationStation.AttestationDataStruct[]]
+    values: [IAttestationStation.AttestationDataStruct[]]
   ): string;
   encodeFunctionData(
     functionFragment: "attestations",
@@ -90,12 +90,12 @@ export type AttestationCreatedEvent = TypedEvent<
 export type AttestationCreatedEventFilter =
   TypedEventFilter<AttestationCreatedEvent>;
 
-export interface AttestationStation extends BaseContract {
+export interface IAttestationStation extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: AttestationStationInterface;
+  interface: IAttestationStationInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
@@ -118,7 +118,7 @@ export interface AttestationStation extends BaseContract {
 
   functions: {
     attest(
-      _attestations: AttestationStation.AttestationDataStruct[],
+      _attestations: IAttestationStation.AttestationDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -131,7 +131,7 @@ export interface AttestationStation extends BaseContract {
   };
 
   attest(
-    _attestations: AttestationStation.AttestationDataStruct[],
+    _attestations: IAttestationStation.AttestationDataStruct[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -144,7 +144,7 @@ export interface AttestationStation extends BaseContract {
 
   callStatic: {
     attest(
-      _attestations: AttestationStation.AttestationDataStruct[],
+      _attestations: IAttestationStation.AttestationDataStruct[],
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -173,7 +173,7 @@ export interface AttestationStation extends BaseContract {
 
   estimateGas: {
     attest(
-      _attestations: AttestationStation.AttestationDataStruct[],
+      _attestations: IAttestationStation.AttestationDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -187,7 +187,7 @@ export interface AttestationStation extends BaseContract {
 
   populateTransaction: {
     attest(
-      _attestations: AttestationStation.AttestationDataStruct[],
+      _attestations: IAttestationStation.AttestationDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 

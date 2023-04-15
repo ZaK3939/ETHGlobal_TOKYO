@@ -22,5 +22,5 @@ export type { AttestationStation } from "./contracts/AttestationStation";
 export { AttestationStation__factory } from "./factories/contracts/AttestationStation__factory";
 export type { HackathonAttestation } from "./contracts/HackthonAttestation.sol/HackathonAttestation";
 export { HackathonAttestation__factory } from "./factories/contracts/HackthonAttestation.sol/HackathonAttestation__factory";
-export type { IAttestationStation } from "./contracts/HackthonAttestation.sol/IAttestationStation";
-export { IAttestationStation__factory } from "./factories/contracts/HackthonAttestation.sol/IAttestationStation__factory";
+export type { IAttestationStation } from "./contracts/utils/IAttestationStation";
+export { IAttestationStation__factory } from "./factories/contracts/utils/IAttestationStation__factory";

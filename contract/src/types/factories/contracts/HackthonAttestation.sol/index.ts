@@ -2,4 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export { HackathonAttestation__factory } from "./HackathonAttestation__factory";
-export { IAttestationStation__factory } from "./IAttestationStation__factory";
